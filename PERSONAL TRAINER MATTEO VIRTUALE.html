@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Personal Trainer</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .container { width: 60%; margin: 0 auto; padding: 20px; }
+    h1 { text-align: center; }
+    select, button { padding: 10px; font-size: 16px; }
+    #workout { margin-top: 20px; }
+    button { margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Virtual Personal Trainer</h1>
+    <p>Benvenuto! Vuoi allenarti per <strong>Mass</strong> o per <strong>Definition</strong>?</p>
+    
+    <select id="goal">
+      <option value="MASS">MASS</option>
+      <option value="DEFINITION">DEFINITION</option>
+    </select>
+    
+    <p>Quale parte del corpo vuoi allenare?</p>
+    <select id="bodyPart">
+      <option value="LEGS">LEGS</option>
+      <option value="ARMS">ARMS</option>
+      <option value="CHEST">CHEST</option>
+      <option value="BACK">BACK</option>
+      <option value="SHOULDERS">SHOULDERS</option>
+      <option value="CORE">CORE</option>
+      <option value="CARDIO">CARDIO</option>
+    </select>
+    
+    <button onclick="showWorkout()">Mostra Allenamento</button>
+    <button onclick="startListening()">Parla per scegliere obiettivo e parte del corpo</button>
+
+    <div id="workout"></div>
+  </div>
+
+  <script>
+    // Sintesi vocale per rispondere
+    function speak(text) {
+      var utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'it-IT';
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // Funzione per avviare il riconoscimento vocale
+    function startListening() {
+      if (!('webkitSpeechRecognition' in window)) {
+        alert("Il riconoscimento vocale non è supportato in questo browser.");
+        return;
+      }
+
+      var recognition = new webkitSpeechRecognition();
+      recognition.lang = 'it-IT';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.start();
+
+      recognition.onresult = function(event) {
+        var spokenText = event.results[0][0].transcript.toUpperCase();
+        console.log("Hai detto: " + spokenText);
+        processVoiceCommand(spokenText);
+      };
+
+      recognition.onerror = function(event) {
+        console.error("Errore nel riconoscimento vocale: ", event.error);
+        speak("Non ho capito, prova di nuovo.");
+      };
+    }
+
+    // Processa il comando vocale per scegliere l'obiettivo e la parte del corpo
+    function processVoiceCommand(command) {
+      command = command.replace(/\s+/g, '').toUpperCase();
+
+      if (command.includes("MASS")) {
+        document.getElementById('goal').value = "MASS";
+        speak("Hai scelto l'obiettivo MASS.");
+      } else if (command.includes("DEFINITION")) {
+        document.getElementById('goal').value = "DEFINITION";
+        speak("Hai scelto l'obiettivo DEFINITION.");
+      }
+
+      if (command.includes("LEGS")) {
+        document.getElementById('bodyPart').value = "LEGS";
+        speak("Hai scelto di allenare le LEGS.");
+      } else if (command.includes("ARMS")) {
+        document.getElementById('bodyPart').value = "ARMS";
+        speak("Hai scelto di allenare le ARMS.");
+      } else if (command.includes("CHEST")) {
+        document.getElementById('bodyPart').value = "CHEST";
+        speak("Hai scelto di allenare il CHEST.");
+      } else if (command.includes("BACK")) {
+        document.getElementById('bodyPart').value = "BACK";
+        speak("Hai scelto di allenare il BACK.");
+      } else if (command.includes("SHOULDERS")) {
+        document.getElementById('bodyPart').value = "SHOULDERS";
+        speak("Hai scelto di allenare le SHOULDERS.");
+      } else if (command.includes("CORE")) {
+        document.getElementById('bodyPart').value = "CORE";
+        speak("Hai scelto di allenare il CORE.");
+      } else if (command.includes("CARDIO")) {
+        document.getElementById('bodyPart').value = "CARDIO";
+        speak("Hai scelto di allenare il CARDIO.");
+      }
+
+      showWorkout();  // Mostra il piano di allenamento dopo aver riconosciuto il comando
+    }
+
+    // Mostra il piano di allenamento
+    function showWorkout() {
+      var goal = document.getElementById('goal').value;
+      var bodyPart = document.getElementById('bodyPart').value;
+      var workoutText = "";
+      
+      if (goal == "MASS") {
+        switch(bodyPart) {
+          case "LEGS":
+            workoutText = "LEGS (MASS): Squat 4x8, Lunges 3x10, Leg Press 4x8, Step-Up 3x12.";
+            break;
+          case "ARMS":
+            workoutText = "ARMS (MASS): Bicep Curl 4x8, Dips 3x10, Triceps 3x8, Hammer Curl 4x6.";
+            break;
+          case "CHEST":
+            workoutText = "CHEST (MASS): Bench Press 4x8, Flyes 3x10, Push-Ups 3x12, Incline Bench 4x8.";
+            break;
+          case "BACK":
+            workoutText = "BACK (MASS): Pull-Ups 3x8, Rows 4x8, Lat Pulldown 3x10, Pullover 3x10.";
+            break;
+          case "SHOULDERS":
+            workoutText = "SHOULDERS (MASS): Lateral Raises 4x10, Military Press 3x8, Arnold Press 3x8, Shrugs 3x10.";
+            break;
+          case "CORE":
+            workoutText = "CORE (MASS): Crunches 3x12, Plank 3x30sec, Russian Twists 2x50, Hanging Leg Raises 3x10.";
+            break;
+          case "CARDIO":
+            workoutText = "CARDIO (MASS): Jogging 10m, Stair Climb 2x5m, Rowing 3x10m.";
+            break;
+        }
+      } else if (goal == "DEFINITION") {
+        switch(bodyPart) {
+          case "LEGS":
+            workoutText = "LEGS (DEFINITION): Squat 3x15, Lunges 3x15, Leg Press 3x12, Step-Up 2x20.";
+            break;
+          case "ARMS":
+            workoutText = "ARMS (DEFINITION): Bicep Curl 3x12, Dips 3x15, Triceps 3x12, Hammer Curl 3x10.";
+            break;
+          case "CHEST":
+            workoutText = "CHEST (DEFINITION): Bench Press 3x12, Flyes 3x15, Push-Ups 3x20, Incline Bench 3x12.";
+            break;
+          case "BACK":
+            workoutText = "BACK (DEFINITION): Pull-Ups 3x12, Rows 3x15, Lat Pulldown 3x15, Pullover 3x12.";
+            break;
+          case "SHOULDERS":
+            workoutText = "SHOULDERS (DEFINITION): Lateral Raises 3x12, Military Press 3x12, Arnold Press 3x12, Shrugs 3x15.";
+            break;
+          case "CORE":
+            workoutText = "CORE (DEFINITION): Crunches 3x20, Plank 4x40sec, Russian Twists 3x50, Hanging Leg Raises 3x15.";
+            break;
+          case "CARDIO":
+            workoutText = "CARDIO (DEFINITION): Running 15m, Jump Rope 3x5m, HIIT 10m, Biking 20m.";
+            break;
+        }
+      }
+      
+      document.getElementById('workout').innerHTML = "<h3>Allenamento per " + bodyPart + " (" + goal + ")</h3><p>" + workoutText + "</p>";
+      speak(workoutText); // Risponde a voce con l'allenamento
+    }
+  </script>
+
+</body>
+</html>
