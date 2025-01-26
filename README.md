@@ -7,3 +7,4 @@ To use the PT in APPLE II WRITE ALLENARE IN THE SENTENCE AND AFTER CHOOSE THE MU
 SOFTWARE BUILT WITH HELP OF CHAT GPT
 With a big effort in programming i have adjusted the code from chat gpt and built a version where is possible to choose mass or
 definition in the apple ii version, and built a image floppy.
+The new floppy version 4 start from top of the page.
