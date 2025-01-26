@@ -8,3 +8,5 @@ SOFTWARE BUILT WITH HELP OF CHAT GPT
 With a big effort in programming i have adjusted the code from chat gpt and built a version where is possible to choose mass or
 definition in the apple ii version, and built a image floppy.
 The new floppy version 3 start from top of the page.
+THIS SOFTWARE IS DONATIONWARE THANK YOU FOR UNDERSTANDING MY SITUATION.
+DONATIONWARE STAY FOR SOFTWARE THAT CAN CONTINUE TO LIVE ONLY WITH DONATION SUPPORT.
