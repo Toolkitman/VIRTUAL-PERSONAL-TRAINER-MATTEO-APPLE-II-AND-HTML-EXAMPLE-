@@ -1,0 +1,71 @@
+10 PRINT "Hello! I'm Matteo, your virtual Personal Trainer. Tell me a muscle and whether you want MASS or DEFINITION, for example, LEGS MASS. Press enter. You can also choose CARDIO, CORE, DIET, and STRESS?"
+20 INPUT A$
+30 IF A$ = "LEGS MASS" THEN GOTO 70
+40 IF A$ = "ARMS MASS" THEN GOTO 100
+50 IF A$ = "CHEST MASS" THEN GOTO 130
+60 IF A$ = "BACK MASS" THEN GOTO 160
+61 IF A$ = "CARDIO" THEN GOTO 220
+62 IF A$ = "CORE" THEN GOTO 250
+63 IF A$ = "DIET" THEN GOTO 280
+64 IF A$ = "STRESS" THEN GOTO 310
+65 IF A$ = "LEGS DEFINITION" THEN GOTO 70
+66 IF A$ = "ARMS DEFINITION" THEN GOTO 100
+67 IF A$ = "CHEST DEFINITION" THEN GOTO 130
+68 IF A$ = "BACK DEFINITION" THEN GOTO 160
+69 IF A$ = "BYE" THEN GOTO 470
+
+70 FOR I = 1 TO LEN(A$) - 10
+80 IF MID$(A$, I, 11) = "LEGS MASS" THEN PRINT "Here is a leg workout: Squat 1x20, Lunges 2x12, Leg Press 3x10, Step-Up 2x20." : GOTO 460
+90 NEXT I
+
+100 FOR I = 1 TO LEN(A$) - 12
+110 IF MID$(A$, I, 13) = "ARMS MASS" THEN PRINT "Here is an arm workout: Biceps Curl 2x10, Dips 2x10, Dumbbell Triceps 2x10, Hammer Curl 2x6." : GOTO 460
+120 NEXT I
+
+130 FOR I = 1 TO LEN(A$) - 10
+140 IF MID$(A$, I, 11) = "CHEST MASS" THEN PRINT "Here is a chest workout: Bench Press 3x10-8-6, Flyes 2x12, Push-Up 2x10, Incline Bench Press 2x12." : GOTO 460
+150 NEXT I
+
+160 FOR I = 1 TO LEN(A$) - 12
+170 IF MID$(A$, I, 13) = "BACK MASS" THEN PRINT "Here is a back workout: Pull-Ups 2x6, Row 2x10, Lat Pulldown 2x15, Pullover 1x20." : GOTO 460
+180 NEXT I
+
+190 FOR I = 1 TO LEN(A$) - 11
+200 IF MID$(A$, I, 12) = "SHOULDERS MASS" THEN PRINT "Here is a shoulder workout: Lateral Raises 2x10, Military Press 2x6-8, Arnold Press 2x6-8, Shrugs 2x10." : GOTO 460
+210 NEXT I
+
+220 FOR I = 1 TO LEN(A$) - 5
+230 IF MID$(A$, I, 6) = "CARDIO" THEN PRINT "Here is a cardio workout: Running 10m, Jump Rope 2m, HIIT 5m, Cycling 15m." : GOTO 460
+240 NEXT I
+
+250 FOR I = 1 TO LEN(A$) - 3
+260 IF MID$(A$, I, 4) = "CORE" THEN PRINT "Here is a core workout: Crunch 3x12, Plank 30sec, Russian Twist 2x50, Mountain Climbers 5m." : GOTO 460
+270 NEXT I
+
+280 FOR I = 1 TO LEN(A$) - 4
+290 IF MID$(A$, I, 5) = "DIET" THEN PRINT "Eating healthy is important. Consume proteins, carbohydrates, and healthy fats in a balanced way." : GOTO 460
+300 NEXT I
+
+310 FOR I = 1 TO LEN(A$) - 5
+320 IF MID$(A$, I, 6) = "STRESS" THEN PRINT "Training helps to reduce stress. I recommend yoga or meditation." : GOTO 460
+330 NEXT I
+
+340 FOR I = 1 TO LEN(A$) - 16
+350 IF MID$(A$, I, 17) = "LEGS DEFINITION" THEN PRINT "Here is a leg workout: Squat 2x20, Lunges 1x20, Press 2x15, Step-Up 2x15." : GOTO 460
+360 NEXT I
+
+370 FOR I = 1 TO LEN(A$) - 18
+380 IF MID$(A$, I, 19) = "ARMS DEFINITION" THEN PRINT "Here is an arm workout: Biceps Curl 1x20, Dips 2x15, Dumbbell Triceps 2x20, Hammer Curl 2x12." : GOTO 460
+390 NEXT I
+
+400 FOR I = 1 TO LEN(A$) - 16
+410 IF MID$(A$, I, 17) = "CHEST DEFINITION" THEN PRINT "Here is a chest workout: Bench Press 3x15, Flyes 2x20, Push-Up 2x15, Incline Bench Press 1x20." : GOTO 460
+420 NEXT I
+
+430 FOR I = 1 TO LEN(A$) - 18
+440 IF MID$(A$, I, 19) = "BACK DEFINITION" THEN PRINT "Here is a back workout: Pull-Ups 2x20, Row 2x15, Lat Pulldown 2x20, Pullover 1x20." : GOTO 460
+450 NEXT I
+
+460 GOTO 20
+
+470 END
