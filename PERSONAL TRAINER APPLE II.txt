@@ -1,0 +1,51 @@
+10 PRINT "Ciao! Sono il tuo Personal Trainer virtuale. Come posso aiutarti oggi?"
+20 INPUT A$
+30 IF A$ = "FINE" THEN GOTO 380
+
+40 FOR I = 1 TO LEN(A$) - 7
+50 IF MID$(A$, I, 8) = "ALLENARE" THEN PRINT "Quale parte del corpo vuoi allenare? (es. GAMBE, BRACCIA, PETTO, SCHIENA)" : GOTO 350
+60 NEXT I
+
+70 FOR I = 1 TO LEN(A$) - 4
+80 IF MID$(A$, I, 5) = "GAMBE" THEN PRINT "Ecco un allenamento per le gambe: Squat 1x20, Affondi 2x12 , Leg Press 2x10, Step-Up 1x15." : GOTO 350
+90 NEXT I
+
+100 FOR I = 1 TO LEN(A$) - 6
+110 IF MID$(A$, I, 7) = "BRACCIA" THEN PRINT "Ecco un allenamento per le braccia: Curl Bicipiti 2x10, Dips 2x12, Tricipiti con manubri 2x10, Hammer Curl 2x6." : GOTO 350
+120 NEXT I
+
+130 FOR I = 1 TO LEN(A$) - 4
+140 IF MID$(A$, I, 5) = "PETTO" THEN PRINT "Ecco un allenamento per il petto: Panca Piana 3x10-8-6, Croci 2x12, Push-Up 2x10, Panca Inclinata 2x12." : GOTO 350
+150 NEXT I
+
+160 FOR I = 1 TO LEN(A$) - 6
+170 IF MID$(A$, I, 7) = "SCHIENA" THEN PRINT "Ecco un allenamento per la schiena: Trazioni 2x6, Rematore 2x10, Lat Machine 2x15, Pullover 1x20." : GOTO 350
+180 NEXT I
+
+190 FOR I = 1 TO LEN(A$) - 4
+200 IF MID$(A$, I, 5) = "SPALLE" THEN PRINT "Ecco un allenamento per le spalle: Alzate Laterali 2x10, Military Press 2x6-8, Arnold Press 2x6-8, Shrugs 2x10." : GOTO 350
+210 NEXT I
+
+220 FOR I = 1 TO LEN(A$) - 3
+230 IF MID$(A$, I, 4) = "CARDIO" THEN PRINT "Ecco un allenamento cardio: Corsa 10m, Jump Rope 2m, HIIT 5m, Bicicletta 15mm." : GOTO 350
+240 NEXT I
+
+250 FOR I = 1 TO LEN(A$) - 5
+260 IF MID$(A$, I, 6) = "CORE" THEN PRINT "Ecco un allenamento per il core: Crunch 3x12, Plank 30sec., Russian Twist 2x50, Mountain Climbers 5m." : GOTO 350
+270 NEXT I
+
+280 FOR I = 1 TO LEN(A$) - 6
+290 IF MID$(A$, I, 7) = "DIETA" THEN PRINT "Mangiare sano è importante. Consuma proteine, carboidrati e grassi sani in modo equilibrato." : GOTO 350
+300 NEXT I
+
+310 FOR I = 1 TO LEN(A$) - 5
+320 IF MID$(A$, I, 6) = "STRESS" THEN PRINT "L'allenamento aiuta a ridurre lo stress. Ti consiglio yoga o meditazione." : GOTO 350
+330 NEXT I
+
+340 PRINT "Non ho capito. Puoi ripetere?"
+350 PRINT "Dimmi di più."
+360 GOTO 20
+
+370 REM Programma terminato
+380 PRINT "Ciao, alla prossima!"
+390 END
