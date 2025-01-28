@@ -9,3 +9,4 @@ With a big effort in programming i have adjusted the code from chat gpt and buil
 definition in the apple ii version, and built a image floppy.
 The new floppy version 3 start from top of the page.
 
+This chatbot dont records personal data, every chatbot and robot in this pages are only for educational sample and example.
