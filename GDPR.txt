@@ -38,4 +38,4 @@ Per ulteriori informazioni o domande sulla conformità al GDPR, contattare
 MIT.
 
 SOFTWARE BETA
-Essendo un software in Beta testing si accetta il seguente gdpr scricandolo.
+Essendo un software in Beta testing si accetta il seguente gdpr scaricandolo.
