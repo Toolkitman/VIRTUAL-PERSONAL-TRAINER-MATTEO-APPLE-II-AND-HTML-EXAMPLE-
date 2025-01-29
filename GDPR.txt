@@ -1,0 +1,38 @@
+# VIRTUAL-PERSONAL-TRAINER-MATTEO-APPLE-II-AND-HTML-EX e sue varianti
+
+## Descrizione
+Chatbot di Esempio che simula un Personal Trainer.
+
+## Installazione
+cliccare sul file html.
+
+## Utilizzo
+parlare o scrivere sulla chat.
+
+## Conformità al GDPR
+Questo progetto rispetta il Regolamento Generale sulla Protezione dei Dati (GDPR). Di seguito sono riportate le informazioni chiave relative alla conformità:
+
+### Raccolta dei Dati
+- Il chatbot raccoglie solo i dati strettamente necessari per il suo funzionamento.
+
+### Finalità del Trattamento
+- I dati raccolti vengono utilizzati esclusivamente per descrivere le finalità del trattamento, ad esempio: migliorare le risposte del chatbot, analizzare l'interazione degli utenti, ecc.
+
+### Base Giuridica del Trattamento
+- Il trattamento dei dati si basa sul consenso esplicito degli utenti. Gli utenti devono fornire il loro consenso prima di utilizzare il chatbot.
+
+### Diritti degli Interessati
+- Gli utenti hanno il diritto di accedere, rettificare, cancellare e limitare il trattamento dei loro dati personali.
+- Gli utenti possono esercitare i loro diritti contattando 
+
+### Sicurezza dei Dati
+- I dati raccolti sono protetti mediante misure di sicurezza adeguate per prevenire accessi non autorizzati, divulgazione, modifica o distruzione dei dati.
+
+### Conservazione dei Dati
+- I dati personali raccolti vengono conservati per il tempo strettamente necessario a raggiungere le finalità per cui sono stati raccolti.
+
+## Contatti
+Per ulteriori informazioni o domande sulla conformità al GDPR, contattare
+
+## Licenza
+MIT.
